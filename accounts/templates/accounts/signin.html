@@ -1,0 +1,50 @@
+{% include "base/header.html" %}
+{% load static %}
+
+{% block content %}
+<div id="page-container" class="" style="background-color: #fcf3dd;" >
+    {% comment %} {% include "includes/header.html" %} {% endcomment %}
+    <!-- ========================= SECTION CONTENT ========================= -->
+    <section class="section-container bg-silver" style="min-height: 84vh">
+      <div class="container">
+        <!-- ============================ COMPONENT LOGIN ================================= -->
+        <div class="card mx-auto" style="max-width: 380px; margin-top: 200px;">
+            <div class="card-body">
+                <h4 class="card-title mb-4">Sign in</h4>
+                {% include "accounts/includes/messages.html" %}
+
+                <form action="{% url "login" %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.email }}
+                    </div> <!-- form-group// -->
+                    <div class="form-group">
+                        {{ form.password }}
+                    </div> <!-- form-group// -->
+                    <br>
+                    {% comment %} <div class="form-group">
+                        <a href="{% url "forgotpassword" %}" class="float-right">Forgot password?</a>
+                    </div> <!-- form-group form-check .// --> {% endcomment %}
+                    <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </div> <!-- form-group// -->
+                </form>
+            </div> <!-- card-body.// -->
+        </div> <!-- card .// -->
+        <div class="text-center">
+            <p >Don't have an account? <a href="{% url "register" %}">Sign up</a></p>
+            <br><br>
+        </div>
+        <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
+      </div>
+    </section>
+    <!-- ========================= SECTION CONTENT END// ========================= -->
+
+ 
+</div>
+
+  
+{% comment %} </body>
+</html> {% endcomment %}
+{% endblock %}

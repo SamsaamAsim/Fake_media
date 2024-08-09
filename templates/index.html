@@ -1,0 +1,340 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include the generated CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    {% comment %} <link href="{% static 'css/styles.css' %}" rel="stylesheet"> {% endcomment %}
+    <link href="{%static 'css/tailwind.css'%}" rel="stylesheet">
+
+    <!-- Include the ApexCharts library -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- Include your custom JavaScript file -->
+    {% comment %} <script src="{% static 'js/chart.js' %}" defer></script> {% endcomment %}
+    <script src="{% static 'js/inputfile.js' %}" defer></script>
+
+    <nav class=" block  border-gray-200 dark:bg-gray-900 sticky top-0 z-50 " style="background-color: #161e4f;">
+      <div class="w-100% mx-auto flex   p-4 custom-bg">
+        <!-- Logo - Leftmost Item -->
+        <a href="https://flowbite.com/" class="flex justify-Start space-x-3 rtl:space-x-reverse">
+          <img src="static\robotic-artificial-intelligence-technology-smart-lerning-from-bigdata.jpg\TaeJune15.jpg" class="h-8" alt="Flowbite Logo" />
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">AI or Not detection</span>
+        </a>
+    
+        <!-- Center items (Navigation Links) -->
+        <div class="flex-1 flex justify-center">
+          <ul class="flex space-x-4 font-medium p-4 md:p-0 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" style="background-color: #161e4f;">
+            <li>
+              <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+            </li>
+           
+            
+            <li>
+              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+            </li>
+          </ul>
+        </div>
+    
+        <!-- Rightmost Items (User Menu & Mobile Menu Button) -->
+        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+          <button    type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+            <span class="sr-only">Open user menu</span>
+            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo">
+          </button>
+          <!-- Dropdown menu -->
+          <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+            <div class="px-4 py-3">
+              <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+              <span class="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+            </div>
+            <ul class="py-2" aria-labelledby="user-menu-button">
+              <li>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+              </li>
+            </ul>
+          </div>
+          <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </head>
+  <body>
+    
+
+    
+
+<button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+  <span class="sr-only">Open sidebar</span>
+  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+  </svg>
+</button>
+
+<aside id="sidebar-multi-level-sidebar" class="fixed top-2% left-0 z-40 w-64 h-screen bg-custom-bg transition-transform -translate-x-full sm:translate-x-0" style="    background-color: #e0e2ff;" aria-label="Sidebar">
+  <div class="h-full px-3 py-4 overflow-y-auto  bg-custom-bg ">
+     <ul class="space-y-2 font-medium">
+       
+       
+        <li>
+           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <img src="static\dashboard-alt-svgrepo-com.svg" class="w-10 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
+              <span class="flex-1 ms-3 whitespace-nowrap">Home</span>
+              <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+           </a>
+        </li>
+        
+      
+        <li>
+           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <img src="/static/set-up-svgrepo-com.svg" class="w-10 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
+
+              <span class="flex-1 ms-3 whitespace-nowrap">Profile Setting</span>
+           </a>
+        </li>
+        <li>
+           <a href="{% url 'login' %}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <img src="static\sign-in-alt-3-svgrepo-com.svg" class="w-10 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
+              
+              <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
+           </a>
+        </li>
+       
+     </ul>
+  </div>
+</aside>
+
+<div class="p-4 sm:ml-64 "style="    background-color: #fcf3dd;;">
+  <div class="p-4 bg-teal-500 rounded-lg ">
+   <div class="grid grid-cols-2 gap-4 mb-4">
+      
+      
+      <!-- File Upload Widget -->
+      <div class="w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4">
+         <p class="mb-3 text-lg text-gray-500 md:text-xl dark:text-gray-400">AI deepfake detection model</p>
+         <p class="text-gray-500 dark:text-gray-400">Please upload your file to detect if it is AI generated or not</p>
+     
+         <!-- Dropdown menu button and menu -->
+         <div class="mb-4 relative">
+             <button id="dropdownRadioBgHoverButton" class="text-white bg-blue-700 hover:bg-blue-800 w-20px focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                 Select file
+                 <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                 </svg>
+             </button>
+     
+             <!-- Dropdown menu -->
+             <div id="dropdownRadioBgHover" class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 absolute">
+                 <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioBgHoverButton">
+                     <li>
+                         <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                             <input id="default-radio-4" type="radio" value="image" name="file-type" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                             <label for="default-radio-4" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Image</label>
+                         </div>
+                     </li>
+                     <li>
+                         <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                             <input checked id="default-radio-5" type="radio" value="video" name="file-type" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                             <label for="default-radio-5" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Video</label>
+                         </div>
+                     </li>
+                     <li>
+                         <div class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+                             <input id="default-radio-6" type="radio" value="audio" name="file-type" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                             <label for="default-radio-6" class="w-full ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Audio</label>
+                         </div>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+     
+        
+         <div class="mb-4">
+          <form action="{% url 'handle_file_upload' %}" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                  <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                      </svg>
+                      <p id="file-upload-text" class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                  </div>
+                  <input id="dropzone-file" type="file" name="file" class="hidden" />
+              </label>
+              <div id="file-preview" class="mt-4"></div> <!-- Container for file preview -->
+              <button type="submit" class="text-white bg-blue-500 hover:bg-blue-700 rounded-lg px-4 py-2">Check Ai or Not</button>
+          </form>
+      </div>
+
+     
+         <!-- Button -->
+         {% comment %} <button id='check-ai-button' type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Check Ai or Not</button> {% endcomment %}
+     </div>
+     
+<!-- Traffic Analysis Widget -->
+<!-- First Donut Chart Container -->
+<div class="justify-end bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+  <div class="justify-center bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+      <div class="flex justify-between mb-3">
+          <div class="flex justify-center items-center">
+              <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white pe-1">Prediction</h5>
+              <svg data-popover-target="chart-info-1" data-popover-placement="bottom" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm0 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm1-5.034V12a1 1 0 0 1-2 0v-1.418a1 1 0 0 1 1.038-.999 1.436 1.436 0 0 0 1.488-1.441 1.501 1.501 0 1 0-3-.116.986.986 0 0 1-1.037.961 1 1 0 0 1-.96-1.037A3.5 3.5 0 1 1 11 11.466Z"/>
+              </svg>
+              <div data-popover id="chart-info-1" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+                  <div data-popper-arrow></div>
+              </div>
+          </div>
+      </div>
+      <div class="py-6" id="donut-chart-1"></div>
+      <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+         <div class="flex justify-between items-center pt-5">
+             <button id="check-ai-button" class="bg-blue-500 text-white py-2 px-4 rounded">Check AI</button> 
+          </div> 
+      </div>
+  </div>
+</div>
+
+<!-- Second Donut Chart Container -->
+<div class="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+  <div class="flex justify-between mb-3">
+      <div class="flex justify-center items-center">
+          <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white pe-1">File Types</h5>
+          <svg data-popover-target="chart-info-2" data-popover-placement="bottom" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm0 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm1-5.034V12a1 1 0 0 1-2 0v-1.418a1 1 0 0 1 1.038-.999 1.436 1.436 0 0 0 1.488-1.441 1.501 1.501 0 1 0-3-.116.986.986 0 0 1-1.037.961 1 1 0 0 1-.96-1.037A3.5 3.5 0 1 1 11 11.466Z"/>
+          </svg>
+          <div data-popover id="chart-info-2" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+              <div data-popper-arrow></div>
+          </div>
+      </div>
+  </div>
+  <div class="flex" id="devices-2">
+      <div class="flex items-center me-4">
+          <input id="desktop-2" type="checkbox" value="image" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="desktop-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Image</label>
+      </div>
+      <div class="flex items-center me-4">
+          <input id="tablet-2" type="checkbox" value="video" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="tablet-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Video</label>
+      </div>
+      <div class="flex items-center me-4">
+          <input id="mobile-2" type="checkbox" value="audio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="mobile-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Audio</label>
+      </div>
+  </div>
+  <div class="py-6" id="donut-chart-2"></div>
+  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+      <div class="flex justify-between items-center pt-5">
+          <button id="update-chart-button" class="bg-blue-500 text-white py-2 px-4 rounded">Update Chart</button>
+      </div>
+  </div>
+</div>
+
+
+   </div>
+        </div>
+        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+           <p class="text-2xl text-gray-400 dark:text-gray-500">
+              <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+              </svg>
+           </p>
+        </div>
+        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+           <p class="text-2xl text-gray-400 dark:text-gray-500">
+              <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+              </svg>
+           </p>
+        </div>
+     </div>
+     <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
+ 
+  
+
+  <!-- Radial Chart -->
+
+</div>
+
+     </div>
+     <div class="grid grid-cols-2 gap-4">
+        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+           <p class="text-2xl text-gray-400 dark:text-gray-500">
+              <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+              </svg>
+           </p>
+        </div>
+        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+           <p class="text-2xl text-gray-400 dark:text-gray-500">
+              <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+              </svg>
+           </p>
+        </div>
+        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+           <p class="text-2xl text-gray-400 dark:text-gray-500">
+              <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+              </svg>
+           </p>
+        </div>
+        <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
+
+        </div>
+     </div>
+  </div>
+</div>
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          // Check if dummy data is available
+          const dummyData = {{ dummy_data|safe }};
+          
+          if (dummyData && dummyData.labels && dummyData.values) {
+              // Initialize the chart with the dummy data
+              var options = {
+                  chart: {
+                      type: 'donut'
+                  },
+                  series: dummyData.values,
+                  labels: dummyData.labels,
+                  colors: ['#ff4560', '#00e396', '#008ffb']
+              };
+
+              var chart = new ApexCharts(document.querySelector("#donut-chart-1"), options);
+              chart.render();
+          }
+      });
+  </script>
+ <script src="{% static 'js/chart.js' %}"></script> 
+    
+    
+
+  </body>
+</html>
