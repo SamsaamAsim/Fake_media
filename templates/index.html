@@ -18,121 +18,80 @@
     <!-- Include your custom JavaScript file -->
     {% comment %} <script src="{% static 'js/chart.js' %}" defer></script> {% endcomment %}
     <script src="{% static 'js/inputfile.js' %}" defer></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <style>
+        /* Ensure the control bar is hidden */
+        dotlottie-player::part(controls) {
+            display: none !important;
+        }
+    </style>
 
-    <nav class=" block  border-gray-200 dark:bg-gray-900 sticky top-0 z-50 " style="background-color: #161e4f;">
-      <div class="w-100% mx-auto flex   p-4 custom-bg">
-        <!-- Logo - Leftmost Item -->
-        <a href="https://flowbite.com/" class="flex justify-Start space-x-3 rtl:space-x-reverse">
-          <img src="static\robotic-artificial-intelligence-technology-smart-lerning-from-bigdata.jpg\TaeJune15.jpg" class="h-8" alt="Flowbite Logo" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">AI or Not detection</span>
-        </a>
-    
-        <!-- Center items (Navigation Links) -->
-        <div class="flex-1 flex justify-center">
-          <ul class="flex space-x-4 font-medium p-4 md:p-0 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" style="background-color: #161e4f;">
-            <li>
-              <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
-            </li>
-            <li>
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-            </li>
-           
-            
-            <li>
-              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-            </li>
-          </ul>
-        </div>
-    
-        <!-- Rightmost Items (User Menu & Mobile Menu Button) -->
-        <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button    type="button" class="flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-            <span class="sr-only">Open user menu</span>
-            <img class="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="user photo">
-          </button>
-          <!-- Dropdown menu -->
-          <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
-            <div class="px-4 py-3">
-              <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-              <span class="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-            </div>
-            <ul class="py-2" aria-labelledby="user-menu-button">
-              <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a>
-              </li>
-              <li>
-                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
-              </li>
-            </ul>
+    <nav class="block border-gray-200 h-20 bg-gray-800 sticky top-0 z-50">
+      <div class="w-full mx-auto flex items-center justify-between h-full p-4 custom-bg">
+          <!-- Logo - Leftmost Item -->
+          <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <dotlottie-player
+            src="https://lottie.host/0074f517-042c-4a07-b064-7439e5b66d45/kRvdGkW8G5.json"
+            background="transparent"
+            speed="1"
+            style="width: 150px; height: 150px"
+            direction="1"
+            playMode="normal"
+            loop
+            autoplay
+        ></dotlottie-player>      
+             <span class="text-2xl font-semibold whitespace-nowrap text-white">AI or Not detection</span>
+          </a>
+  
+          <!-- Rightmost Items (User Menu & Mobile Menu Button) -->
+          <div class="flex items-center space-x-3 rtl:space-x-reverse">
+              <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                  <span class="sr-only">Open user menu</span>
+                  <img class="w-8 h-8 rounded-full" src="{{ profile_picture_url }}" alt="user photo">
+              </button>
+  
+              <!-- Dropdown menu -->
+              <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" id="user-dropdown">
+                  <div class="px-4 py-3">
+                      <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                      <span class="block text-sm text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                  </div>
+                  <ul class="py-2" aria-labelledby="user-menu-button">
+                      <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a></li>
+                      <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a></li>
+                      <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Earnings</a></li>
+                      <li><a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a></li>
+                  </ul>
+              </div>
+  
+              <!-- Mobile Menu Button -->
+              <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                  </svg>
+              </button>
           </div>
-          <button data-collapse-toggle="navbar-user" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-user" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-          </button>
-        </div>
       </div>
-    </nav>
+  </nav>
+  
   </head>
   <body>
     
 
     
 
-<button data-drawer-target="sidebar-multi-level-sidebar" data-drawer-toggle="sidebar-multi-level-sidebar" aria-controls="sidebar-multi-level-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-  <span class="sr-only">Open sidebar</span>
-  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-  <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-  </svg>
-</button>
 
-<aside id="sidebar-multi-level-sidebar" class="fixed top-2% left-0 z-40 w-64 h-screen bg-custom-bg transition-transform -translate-x-full sm:translate-x-0" style="    background-color: #e0e2ff;" aria-label="Sidebar">
-  <div class="h-full px-3 py-4 overflow-y-auto  bg-custom-bg ">
-     <ul class="space-y-2 font-medium">
-       
-       
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <img src="static\dashboard-alt-svgrepo-com.svg" class="w-10 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
-              <span class="flex-1 ms-3 whitespace-nowrap">Home</span>
-              <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
-           </a>
-        </li>
-        
-      
-        <li>
-           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <img src="/static/set-up-svgrepo-com.svg" class="w-10 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
-
-              <span class="flex-1 ms-3 whitespace-nowrap">Profile Setting</span>
-           </a>
-        </li>
-        <li>
-           <a href="{% url 'login' %}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-            <img src="static\sign-in-alt-3-svgrepo-com.svg" class="w-10 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
-              
-              <span class="flex-1 ms-3 whitespace-nowrap">Sign In</span>
-           </a>
-        </li>
-       
-     </ul>
-  </div>
-</aside>
-
-<div class="p-4 sm:ml-64 "style="    background-color: #fcf3dd;;">
+{% include "base/sidebar.html" %}
+<div class="pt-4 sm:ml-64 bg-gray-800">
+<div class="w-full bg-gradient-to-r from-gray-500  to-gray-400 rounded-tl-3xl shadow dark:bg-gray-800  pt-8 pl-8">
   <div class="p-4 bg-teal-500 rounded-lg ">
+
    <div class="grid grid-cols-2 gap-4 mb-4">
-      
+    
       
       <!-- File Upload Widget -->
-      <div class="w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4">
+      <div class="w-full bg-gray-600   rounded-lg shadow dark:bg-gray-800 p-4">
          <p class="mb-3 text-lg text-gray-500 md:text-xl dark:text-gray-400">AI deepfake detection model</p>
          <p class="text-gray-500 dark:text-gray-400">Please upload your file to detect if it is AI generated or not</p>
      
@@ -172,7 +131,7 @@
      
         
          <div class="mb-4">
-          <form action="{% url 'handle_file_upload' %}" method="post" enctype="multipart/form-data">
+          <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
               {% csrf_token %}
               <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                   <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -184,7 +143,10 @@
                   <input id="dropzone-file" type="file" name="file" class="hidden" />
               </label>
               <div id="file-preview" class="mt-4"></div> <!-- Container for file preview -->
-              <button type="submit" class="text-white bg-blue-500 hover:bg-blue-700 rounded-lg px-4 py-2">Check Ai or Not</button>
+              <button type="submit" class="transition-transform duration-300 ease-in-out transform bg-blue-500 hover:bg-indigo-500 text-white rounded-lg px-4 py-2 hover:scale-105 hover:translate-y-[-2px]">
+                Check Ai or Not
+            </button>
+            
           </form>
       </div>
 
@@ -195,8 +157,8 @@
      
 <!-- Traffic Analysis Widget -->
 <!-- First Donut Chart Container -->
-<div class="justify-end bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
-  <div class="justify-center bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+<div class="justify-end bg-gray-600 rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+  <div class="justify-center bg-gray-600 rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
       <div class="flex justify-between mb-3">
           <div class="flex justify-center items-center">
               <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white pe-1">Prediction</h5>
@@ -208,17 +170,16 @@
               </div>
           </div>
       </div>
-      <div class="py-6" id="donut-chart-1"></div>
+      <div class="py-6" id="donut-chart-01"></div>
       <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
          <div class="flex justify-between items-center pt-5">
-             <button id="check-ai-button" class="bg-blue-500 text-white py-2 px-4 rounded">Check AI</button> 
           </div> 
       </div>
   </div>
 </div>
 
 <!-- Second Donut Chart Container -->
-<div class="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+<div class="max-w-sm w-full bg-pink-100 rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
   <div class="flex justify-between mb-3">
       <div class="flex justify-center items-center">
           <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white pe-1">File Types</h5>
@@ -247,13 +208,13 @@
   <div class="py-6" id="donut-chart-2"></div>
   <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
       <div class="flex justify-between items-center pt-5">
-          <button id="update-chart-button" class="bg-blue-500 text-white py-2 px-4 rounded">Update Chart</button>
+          <button id="update-chart-button" class=" transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 bg-blue-500 text-white py-2 px-4 rounded">Update Chart</button>
       </div>
   </div>
 </div>
 
 
-   </div>
+   {% comment %} </div>
         </div>
         <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
            <p class="text-2xl text-gray-400 dark:text-gray-500">
@@ -276,10 +237,10 @@
 
   <!-- Radial Chart -->
 
-</div>
+</div> {% endcomment %}
 
      </div>
-     <div class="grid grid-cols-2 gap-4">
+     {% comment %} <div class="grid grid-cols-2 gap-4">
         <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
            <p class="text-2xl text-gray-400 dark:text-gray-500">
               <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -304,8 +265,9 @@
         <div class="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
 
         </div>
-     </div>
+     </div> {% endcomment %}
   </div>
+</div>
 </div>
 
     <!--[if lt IE 7]>
@@ -320,17 +282,38 @@
               // Initialize the chart with the dummy data
               var options = {
                   chart: {
+                height: 320,
+                width: "100%",
+
                       type: 'donut'
                   },
                   series: dummyData.values,
                   labels: dummyData.labels,
-                  colors: ['#ff4560', '#00e396', '#008ffb']
+                 
+                  colors: ["#16BDCA", "#FDBA8C"],
+            
               };
 
-              var chart = new ApexCharts(document.querySelector("#donut-chart-1"), options);
+              var chart = new ApexCharts(document.querySelector("#donut-chart-01"), options);
               chart.render();
           }
-      });
+          else{
+            var options = {
+              chart: {
+            height: 320,
+            width: "100%",
+
+                  type: 'donut'
+              },
+              series: [50,50],
+              labels: ["Ai","Not Ai"],
+             
+              colors: ["#16BDCA", "#FDBA8C"],
+          }; 
+          var chart = new ApexCharts(document.querySelector("#donut-chart-01"), options);
+          chart.render();
+      }
+    });
   </script>
  <script src="{% static 'js/chart.js' %}"></script> 
     

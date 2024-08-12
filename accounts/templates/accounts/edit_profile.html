@@ -1,0 +1,93 @@
+{% include "base/header.html" %}
+{% load static %}
+
+{% comment %} {% block content %} {% endcomment %}
+<!-- ========================= SECTION CONTENT ========================= -->
+<body class="relative overflow-hidden">
+    <!-- Background Lottie Animation -->
+   
+
+<section class="section-conten padding-y bg">
+{% comment %} {% include "includes/alerts.html" %} {% endcomment %}
+
+    <div class="container">
+      
+        <div class="row" style="justify-content:center">
+        {% include "base/sidebar.html" %}
+
+        <main class="col-md-9">
+            {% comment %} <div class="background-container m-10">
+                <dotlottie-player src="https://lottie.host/11855aa2-87d7-4a51-9457-1328cb2531aa/fXbH2cY8uB.json" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+            </div> {% endcomment %}
+            <article class="card" style="margin-top:10%">
+                <header class="card-header">
+                    <strong class="d-inline-block mr-3">Edit Your Profile </strong>
+                </header>
+                <div class="card-body " >
+                    <div class="text-right">
+                        {% if userprofile.profile_picture %}
+                            <img src="{{ userprofile.profile_picture.url }}" alt="Profile Picture" width="100" style="border-radius:50px;">
+                        {% else %}
+                            <img   src="{{ profile_picture_url }}" title="my-customer-avatar" alt="Default Profile Picture" width="100" style="border-radius:50px;">
+                        {% endif %}
+                    </div>
+                    <div class="row"> 
+                        <div class="col-md-12">
+                            <form action="{% url 'edit_profile' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="">First Name</label>
+                                        {{ user_form.first_name }}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Last Name</label>
+                                        {{ user_form.last_name }}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="">Phone Number</label>
+                                        {{ user_form.phone_number }}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="">Profile Picture</label>
+                                        {{ profile_form.profile_picture }}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Address Line 1</label>
+                                    {{ profile_form.address_line_1 }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Address Line 2</label>
+                                    {{ profile_form.address_line_2 }}
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="">City</label>
+                                        {{ profile_form.city }}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="">State</label>
+                                        {{ profile_form.state }}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="">Country</label>
+                                        {{ profile_form.country }}
+                                    </div>
+                                </div> 
+                                <input type="submit" value="Save" class="btn btn-primary">
+                            </form>
+                        </div> 
+                    </div> 
+                </div> 
+            </article> <!-- order-group.// --> 
+        </main>
+    </div> <!-- row.// -->
+    </div>
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+</body>
+</html>
+{% comment %} {% endblock %} {% endcomment %}

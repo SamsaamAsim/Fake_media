@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     // Render Both Charts
-    renderChart("donut-chart-1", "Model Confidence");
+    // renderChart("donut-chart-1", "Model Confidence");
     renderChart("donut-chart-2");
 
     // File Input Handling

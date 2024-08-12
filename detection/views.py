@@ -3,17 +3,33 @@ from django.shortcuts import render
 import requests
 from django.shortcuts import render, redirect
 from django.core.files.storage import default_storage
+from accounts.models import UserProfile
 
+def home(request):
+    # Retrieve dummy data from session
+    dummy_data = request.session.get('dummy_data', {})
+    user = request.user
+    profile_picture_url = None
 
-def home(requests ):
-    dummy_data = requests.session.get('dummy_data', {})
-    
+    # Check if user is authenticated and get profile picture URL
+    if user.is_authenticated:
+        user_profile = UserProfile.objects.filter(user=user).first()
+        if user_profile and user_profile.profile_picture:
+            profile_picture_url = user_profile.profile_picture.url
+        else:
+            profile_picture_url = "https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg"
+
+    # Prepare context with profile picture URL and dummy data
+    context = {
+        'profile_picture_url': profile_picture_url,
+        'dummy_data': dummy_data
+    }
+
     # Clear the session data if needed
-    if 'dummy_data' in requests.session:
-        del requests.session['dummy_data']
+    if 'dummy_data' in request.session:
+        del request.session['dummy_data']
     
-    return render(requests, 'index.html', {'dummy_data': dummy_data})
-    # return render(requests, 'index.html')
+    return render(request, 'index.html', context)
 
 
 # views.py
@@ -71,9 +87,9 @@ def upload_file(request):
             detection.save()
              # Store dummy data in session
             request.session['dummy_data'] = {
-                'labels': ['Label 1', 'Label 2', 'Label 3'],
-                'values': [10, 20, 30]
+                'labels': ['Ai', 'Not Ai'],
+                'values': [ 20, 30]
             }
             return redirect('home')  # Redirect to a success page or any other page
             
-    return render(request, 'upload.html')  # Render the upload form template
+    return redirect( 'home')  # Render the upload form template

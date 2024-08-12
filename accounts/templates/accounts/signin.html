@@ -1,50 +1,46 @@
 {% include "base/header.html" %}
 {% load static %}
 
-{% block content %}
-<div id="page-container" class="" style="background-color: #fcf3dd;" >
-    {% comment %} {% include "includes/header.html" %} {% endcomment %}
-    <!-- ========================= SECTION CONTENT ========================= -->
-    <section class="section-container bg-silver" style="min-height: 84vh">
-      <div class="container">
-        <!-- ============================ COMPONENT LOGIN ================================= -->
-        <div class="card mx-auto" style="max-width: 380px; margin-top: 200px;">
-            <div class="card-body">
-                <h4 class="card-title mb-4">Sign in</h4>
-                {% include "accounts/includes/messages.html" %}
+<body class="relative overflow-hidden">
+    <!-- Background Lottie Animation -->
+    <div class="background-container">
+        <dotlottie-player src="https://lottie.host/11855aa2-87d7-4a51-9457-1328cb2531aa/fXbH2cY8uB.json" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+    </div>
 
-                <form action="{% url "login" %}" method="POST">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        {{ form.email }}
-                    </div> <!-- form-group// -->
-                    <div class="form-group">
-                        {{ form.password }}
-                    </div> <!-- form-group// -->
-                    <br>
-                    {% comment %} <div class="form-group">
-                        <a href="{% url "forgotpassword" %}" class="float-right">Forgot password?</a>
-                    </div> <!-- form-group form-check .// --> {% endcomment %}
-                    <br>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Login</button>
-                    </div> <!-- form-group// -->
-                </form>
-            </div> <!-- card-body.// -->
-        </div> <!-- card .// -->
-        <div class="text-center">
-            <p >Don't have an account? <a href="{% url "register" %}">Sign up</a></p>
-            <br><br>
+    <!-- Main Content -->
+    <div class="container relative z-10 flex items-center justify-center min-h-screen">
+        <div id="page-container" class="w-full bg-opacity-30 max-w-lg mx-auto">
+            <!-- ========================= SECTION CONTENT ========================= -->
+            {% comment %} <section class="section-container bg-white p-6 rounded-lg shadow-lg" style="min-height: 84vh;"> {% endcomment %}
+                <div class="container">
+                    <!-- ============================ COMPONENT LOGIN ================================= -->
+                    <div class="card mx-auto p-6 rounded-lg shadow-lg">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4 text-2xl font-semibold">Sign in</h4>
+                            {% include "accounts/includes/messages.html" %}
+
+                            <form action="{% url "login" %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group mb-4">
+                                    {{ form.email }}
+                                </div> <!-- form-group// -->
+                                <div class="form-group mb-4">
+                                    {{ form.password }}
+                                </div> <!-- form-group// -->
+                                <div class="form-group mb-4">
+                                    <button type="submit" class="btn btn-primary w-full py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-700 transition duration-300">Login</button>
+                                </div> <!-- form-group// -->
+                            </form>
+                        </div> <!-- card-body.// -->
+                    </div> <!-- card .// -->
+                    <div class="text-center mt-4">
+                        <p>Don't have an account? <a href="{% url "register" %}" class="text-blue-500 hover:underline">Sign up</a></p>
+                    </div>
+                    <!-- ============================ COMPONENT LOGIN END.// ================================= -->
+                </div>
+            {% comment %} </section> {% endcomment %}
+            <!-- ========================= SECTION CONTENT END// ========================= -->
         </div>
-        <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
-      </div>
-    </section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
-
- 
-</div>
-
-  
-{% comment %} </body>
-</html> {% endcomment %}
-{% endblock %}
+    </div>
+</body>
+</html>
