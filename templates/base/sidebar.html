@@ -1,0 +1,33 @@
+{% load static %}
+<aside id="sidebar-multi-level-sidebar" class="fixed top-2% left-0 z-40 w-64 h-screen bg-gray-800 transition-transform -translate-x-full sm:translate-x-0" >
+   <div class="h-full px-3 py-4 overflow-y-auto  bg-custom-bg ">
+      <ul class="space-y-2 font-medium">
+        
+        
+         <li>
+            <a href="/"{% url 'edit_profile' %}" " class="animate-jump-out animate-once flex items-center p-2 text-white-900 rounded-lg dark:text-white hover:bg-gray-100  hover:text-gray-900 dark:hover:bg-gray-700 group">
+             <img src="{%static 'dashboard-alt-svgrepo-com.svg'%}" class="w-10 h-10 text-white-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
+               <span class="flex-1 ms-3 text-white whitespace-nowrap   group-hover:text-black">Home</span>
+               <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+            </a>
+         </li>
+         
+       
+         <li>
+            <a href="{% url 'edit_profile' %}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+             <img src="{%static 'set-up-svgrepo-com.svg'%}" class="w-10 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
+ 
+               <span class="flex-1 ms-3 text-white whitespace-nowrap  group-hover:text-black">Profile Setting</span>
+            </a>
+         </li>
+         <li>
+            <a href="{% url 'login' %}" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+             <img src="{%static 'sign-in-alt-3-svgrepo-com.svg'%}" class="w-10 h-10 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" alt="Products Icon">
+               
+               <span class="flex-1 ms-3 text-white whitespace-nowrap  group-hover:text-black">Sign In</span>
+            </a>
+         </li>
+        
+      </ul>
+   </div>
+ </aside>

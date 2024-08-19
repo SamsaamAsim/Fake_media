@@ -11,4 +11,5 @@ urlpatterns = [
     path('forgotpasswordreset/<uidb64>/<token>', views.forgotpassword_validate, name="forgotpassword_validate"),
     
     path('activate/<uidb64>/<token>', views.activate, name="activate"),
+    path('edit_profile/', views.edit_profile, name="edit_profile"),
 ]

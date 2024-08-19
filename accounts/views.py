@@ -9,6 +9,9 @@ from django.contrib.auth import get_user_model
 # from store.views import _cartid
 # from store.models import CartModel,CartItemModel
 import requests
+from django.shortcuts import get_object_or_404
+from .models import UserProfile
+
 
 
 # email avtivation
@@ -20,6 +23,7 @@ from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
 from django.conf import settings
 
+from .forms import UserForm, UserProfileForm
 
 # Create your views here.
 
@@ -208,3 +212,33 @@ def reset_password(request):
     context={"form":form}
     return render(request, "accounts/reset_password_form.html", context)
 
+# @receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)    
+
+@login_required(login_url="login")
+def edit_profile(request):
+    user = request.user
+    userprofile, created = UserProfile.objects.get_or_create(user=user)
+
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=user)
+        profile_form = UserProfileForm(request.POST, request.FILES, instance=userprofile)
+        
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, "Your profile has been updated")
+            return redirect('edit_profile')
+    else:
+        user_form = UserForm(instance=user)
+        profile_form = UserProfileForm(instance=userprofile)
+    
+    context = {
+        'user_form': user_form,
+        'profile_form': profile_form,
+        'userprofile': userprofile,
+    }
+    
+    return render(request, 'accounts/edit_profile.html', context)

@@ -2,11 +2,16 @@
 
 
 {% block title %}
-    Register
+  
 {% endblock %}
 {% load static %}
-{% block content %}
-<div id="page-container" class="" style="background-color: #fcf3dd;">
+
+<body class="relative overflow-hidden">
+    <!-- Background Lottie Animation -->
+    <div class="background-container">
+        <dotlottie-player src="https://lottie.host/11855aa2-87d7-4a51-9457-1328cb2531aa/fXbH2cY8uB.json" background="transparent" speed="1" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+    </div>
+<div id="page-container" class="" >
     {% comment %} {% include "includes/header.html" %} {% endcomment %}
     
     <!-- ========================= SECTION CONTENT ========================= -->
@@ -75,4 +80,5 @@
     
     {% comment %} {% include "includes/footer.html" %} {% endcomment %}
 </div>
-{% endblock %}
+</body>
+</html>
