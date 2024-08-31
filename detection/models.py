@@ -6,9 +6,9 @@ from django.db import models
 class Detection(models.Model):
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     file_path = models.CharField(max_length=255)
-    image_is_ai_generated = models.BooleanField(default=False)
-    video_is_ai_generated = models.BooleanField(default=False)
-    audio_is_ai_generated = models.BooleanField(default=False)
+    image_is_ai_generated = models.CharField(default=False,max_length=255)
+    video_is_ai_generated = models.CharField(default=False,max_length=255)
+    audio_is_ai_generated = models.CharField(default=False,max_length=255)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     
 

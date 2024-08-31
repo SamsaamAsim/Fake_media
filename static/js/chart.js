@@ -111,39 +111,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     
                 });
                 
-            } else if (chartId === "donut-chart-2") {
-                document.getElementById('update-chart-button').addEventListener('click', () => {
-                    const checkboxes = document.querySelectorAll('#devices-2 input[type="checkbox"]');
-                    let imageCount = 0;
-                    let videoCount = 0;
-                    let audioCount = 0;
-
-                    checkboxes.forEach((checkbox) => {
-                        if (checkbox.checked) {
-                            switch (checkbox.value) {
-                                case 'image':
-                                    imageCount++;
-                                    break;
-                                case 'video':
-                                    videoCount++;
-                                    break;
-                                case 'audio':
-                                    audioCount++;
-                                    break;
-                            }
-                        }
-                    });
-
-                    const updatedSeries = [imageCount, videoCount, audioCount];
-                    chart.updateSeries(updatedSeries);
-                });
-            }
+            } else {}
         }
     };
 
     // Render Both Charts
     // renderChart("donut-chart-1", "Model Confidence");
-    renderChart("donut-chart-2");
+    // renderChart("donut-chart-2");
 
     // File Input Handling
     const dropdownButton = document.getElementById('dropdownRadioBgHoverButton');

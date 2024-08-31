@@ -143,8 +143,8 @@
                   <input id="dropzone-file" type="file" name="file" class="hidden" />
               </label>
               <div id="file-preview" class="mt-4"></div> <!-- Container for file preview -->
-              <button type="submit" class="transition-transform duration-300 ease-in-out transform bg-blue-500 hover:bg-indigo-500 text-white rounded-lg px-4 py-2 hover:scale-105 hover:translate-y-[-2px]">
-                Check Ai or Not
+              <button type="submit" class="m-4 transition-transform duration-300 ease-in-out transform bg-blue-500 hover:bg-indigo-500 text-white rounded-lg px-4 py-2 hover:scale-105 hover:translate-y-[-2px] p-4">
+                Check Fake or Real
             </button>
             
           </form>
@@ -179,39 +179,34 @@
 </div>
 
 <!-- Second Donut Chart Container -->
-<div class="max-w-sm w-full bg-pink-100 rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
-  <div class="flex justify-between mb-3">
+<div class=" w-full bg-pink-100 rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+    <div class="flex justify-between mb-3">
       <div class="flex justify-center items-center">
-          <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white pe-1">File Types</h5>
-          <svg data-popover-target="chart-info-2" data-popover-placement="bottom" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm0 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm1-5.034V12a1 1 0 0 1-2 0v-1.418a1 1 0 0 1 1.038-.999 1.436 1.436 0 0 0 1.488-1.441 1.501 1.501 0 1 0-3-.116.986.986 0 0 1-1.037.961 1 1 0 0 1-.96-1.037A3.5 3.5 0 1 1 11 11.466Z"/>
-          </svg>
-          <div data-popover id="chart-info-2" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
-              <div data-popper-arrow></div>
-          </div>
+        <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white pe-1">Total detection you made</h5>
+        <svg data-popover-target="chart-info-2" data-popover-placement="bottom" class="w-3.5 h-3.5 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm0 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm1-5.034V12a1 1 0 0 1-2 0v-1.418a1 1 0 0 1 1.038-.999 1.436 1.436 0 0 0 1.488-1.441 1.501 1.501 0 1 0-3-.116.986.986 0 0 1-1.037.961 1 1 0 0 1-.96-1.037A3.5 3.5 0 1 1 11 11.466Z"/>
+        </svg>
+        <div data-popover id="chart-info-2" role="tooltip" class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
+          <div data-popper-arrow></div>
+        </div>
       </div>
+    </div>
+    <div id="devices-2">
+        <div>
+            <input type="checkbox" value="image" id="image-checkbox"> Image
+        </div>
+        <div>
+            <input type="checkbox" value="video" id="video-checkbox"> Video
+        </div>
+        <div>
+            <input type="checkbox" value="audio" id="audio-checkbox"> Audio
+        </div>
+    </div>
+    <div class="py-6" id="donut-chart-3"></div>
+    <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
+      
+    </div>
   </div>
-  <div class="flex" id="devices-2">
-      <div class="flex items-center me-4">
-          <input id="desktop-2" type="checkbox" value="image" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-          <label for="desktop-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Image</label>
-      </div>
-      <div class="flex items-center me-4">
-          <input id="tablet-2" type="checkbox" value="video" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-          <label for="tablet-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Video</label>
-      </div>
-      <div class="flex items-center me-4">
-          <input id="mobile-2" type="checkbox" value="audio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-          <label for="mobile-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Audio</label>
-      </div>
-  </div>
-  <div class="py-6" id="donut-chart-2"></div>
-  <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
-      <div class="flex justify-between items-center pt-5">
-          <button id="update-chart-button" class=" transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 bg-blue-500 text-white py-2 px-4 rounded">Update Chart</button>
-      </div>
-  </div>
-</div>
 
 
    {% comment %} </div>
@@ -279,24 +274,29 @@
           const dummyData = {{ dummy_data|safe }};
           
           if (dummyData && dummyData.labels && dummyData.values) {
-              // Initialize the chart with the dummy data
-              var options = {
-                  chart: {
-                height: 320,
-                width: "100%",
-
-                      type: 'donut'
-                  },
-                  series: dummyData.values,
-                  labels: dummyData.labels,
-                 
-                  colors: ["#16BDCA", "#FDBA8C"],
-            
-              };
-
-              var chart = new ApexCharts(document.querySelector("#donut-chart-01"), options);
-              chart.render();
-          }
+            // Initialize the chart with the dummy data
+            var options = {
+                chart: {
+                    height: 320,
+                    width: "100%",
+                    type: 'donut'
+                },
+                series: dummyData.values,
+                labels: dummyData.labels,
+                colors: []
+            };
+        
+            // Set the color scheme based on the first label
+            if (dummyData.labels[0] === "Fake") {
+                options.colors = ["#16BDCA", "#FDBA8C"];
+            } else if (dummyData.labels[0] === "Real") {
+                options.colors = ["#FDBA8C", "#16BDCA"];
+            }
+        
+            var chart = new ApexCharts(document.querySelector("#donut-chart-01"), options);
+            chart.render();
+        }
+        
           else{
             var options = {
               chart: {
@@ -306,7 +306,7 @@
                   type: 'donut'
               },
               series: [50,50],
-              labels: ["Ai","Not Ai"],
+              labels: ["Fake","Real"],
              
               colors: ["#16BDCA", "#FDBA8C"],
           }; 
@@ -315,6 +315,76 @@
       }
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fakeCounts = {{ fake_list|safe }};
+        const realCounts = {{ real_list|safe }};
+        const checkboxes = document.querySelectorAll('#devices-2 input[type="checkbox"]');
+        let chart;
+    
+        // Function to update the chart
+        function updateChart(selectedType) {
+            const fakeCount = fakeCounts[selectedType] || 0;
+            const realCount = realCounts[selectedType] || 0;
+    
+            let series;
+            if (fakeCount === 0 && realCount === 0) {
+                series = [1, 1];  // Default to 50-50 if both counts are zero
+            } else {
+                series = [fakeCount, realCount];
+            }
+    
+            const options = {
+                chart: {
+                    height: 320,
+                    width: "100%",
+                    type: 'donut'
+                },
+                series: series,
+                labels: [`Fake ${selectedType}`, `Real ${selectedType}`],
+                colors: ["#16BDCA", "#FDBA8C"]
+            };
+    
+            if (chart) {
+                chart.updateOptions(options);
+            } else {
+                chart = new ApexCharts(document.querySelector("#donut-chart-3"), options);
+                chart.render();
+            }
+        }
+    
+        // Event listener for checkboxes
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    // Uncheck other checkboxes
+                    checkboxes.forEach(cb => {
+                        if (cb !== this) {
+                            cb.checked = false;
+                        }
+                    });
+                    // Update the chart with the selected type
+                    updateChart(this.value);
+                }
+            });
+        });
+    
+        // Check if any checkbox is selected initially
+        const initiallyChecked = document.querySelector('#devices-2 input[type="checkbox"]:checked');
+        if (initiallyChecked) {
+            updateChart(initiallyChecked.value);
+        } else {
+            // If no checkbox is selected, select the "image" checkbox by default
+            const imageCheckbox = document.querySelector('#devices-2 input[value="image"]');
+            if (imageCheckbox) {
+                imageCheckbox.checked = true;
+                updateChart('image');
+            }
+        }
+    });
+    
+</script>
+    
  <script src="{% static 'js/chart.js' %}"></script> 
     
     
